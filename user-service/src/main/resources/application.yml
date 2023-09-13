@@ -1,0 +1,40 @@
+server:
+  port: 0
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/hr
+    username: root
+    password: roZes123$
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  devtools:
+    restart:
+      enabled: true
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:8888
+ 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+logging:
+  file:
+    name: user-service.log
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka  
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true  
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
