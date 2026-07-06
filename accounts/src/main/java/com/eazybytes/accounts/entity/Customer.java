@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Customer {
+public class Customer extends BaseEntity {
     @Column(name="customer_id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

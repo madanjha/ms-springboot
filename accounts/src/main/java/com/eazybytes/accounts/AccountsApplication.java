@@ -1,9 +1,33 @@
 package com.eazybytes.accounts;
 
+import io.swagger.v3.oas.annotations.ExternalDocumentation;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
+@EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
+@OpenAPIDefinition(
+		info=@Info(
+				title="Account microservices REST API Documantation",
+				description = "EazyBank Account microservices REST API Documentation",
+				version = "v1",
+				contact = @Contact(
+						name = "Madan Jha",
+						email = "jha.mk83@gmail.com",
+						url="https://github.com/madanjha"
+				),
+				license = @License(
+				name = "Apache 2.0",
+				url = "https://github.com/madanjha"
+				)
+
+		)
+)
 public class AccountsApplication {
 
 	public static void main(String[] args) {
