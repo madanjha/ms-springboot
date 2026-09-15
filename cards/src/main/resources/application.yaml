@@ -1,0 +1,14 @@
+server:
+  port: 9000
+  application:
+    name: cards
+  datasource:
+    url: JDBC:h2:mem:testDB
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
